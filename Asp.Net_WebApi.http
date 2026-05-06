@@ -1,0 +1,6 @@
+@Asp.Net_WebApi_HostAddress = http://localhost:5095
+
+GET {{Asp.Net_WebApi_HostAddress}}/swagger
+Accept: application/json
+
+###
