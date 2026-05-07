@@ -2,3 +2,23 @@
 2026-05-06 15:08:13.944 +05:30 [INF] Request Received for GetAllUsers, IsActive: False
 2026-05-06 15:16:42.405 +05:30 [INF] Request Received for CalculateRoomCosts: {"RoomIDs":[0],"CheckInDate":"2026-05-07T00:00:00.0000000","CheckOutDate":"2026-05-08T00:00:00.0000000","$type":"RoomCostsDTO"}
 2026-05-06 15:16:58.376 +05:30 [INF] Request Received for CalculateRoomCosts: {"RoomIDs":[5],"CheckInDate":"2026-05-07T00:00:00.0000000","CheckOutDate":"2026-05-08T00:00:00.0000000","$type":"RoomCostsDTO"}
+2026-05-06 16:58:52.995 +05:30 [ERR] Failed to get rooms by price range
+Microsoft.Data.SqlClient.SqlException (0x80131904): Error converting data type numeric to decimal.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsyncCallback(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Asp.Net_WebApi.Repository.HotelSearchRepository.SearchByPriceRangeAsync(Decimal minPrice, Decimal maxPrice) in C:\Users\pcit78\Desktop\Asp.Net_WebApi\Asp.Net_WebApi\Repository\HotelSearchRepository.cs:line 61
+   at Asp.Net_WebApi.Controllers.HotelSearchController.SearchByPriceRange(PriceRangeHotelSearchRequestDTO request) in C:\Users\pcit78\Desktop\Asp.Net_WebApi\Asp.Net_WebApi\Controllers\HotelSearchController.cs:line 61
+ClientConnectionId:fe036500-a305-47b8-8bb8-4636c0e56578
+Error Number:8114,State:5,Class:16
